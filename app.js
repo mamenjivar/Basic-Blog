@@ -26,7 +26,26 @@ var blogSchema = new mongoose.Schema({
     }
 });
 
-var Blog = mongoose.model('BLog', blogSchema);
+var Blog = mongoose.model('Blog', blogSchema);
+
+app.get('/', function(req, res){
+    res.redirect('/home')
+});
+
+app.get('/home', function(req, res){
+    res.render('home');
+});
+
+// Index Route
+app.get('/blog', function(req, res){
+    Blog.find({}, function(err, blog){
+        if(err){
+            console.log('ERROR!');
+        } else {
+            res.render('index', {blog: blog});
+        }
+    });
+});
 
 app.listen(3000, function() {
     console.log('Server is Running!');
