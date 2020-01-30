@@ -49,4 +49,4 @@ app.get('/blog', function(req, res){
 
 app.listen(3000, function() {
     console.log('Server is Running!');
-})
+});
