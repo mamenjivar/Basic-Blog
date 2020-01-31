@@ -45,8 +45,21 @@ app.get('/index', function(req, res){
     res.render('index');
 });
 
+// NEW ROUTE
 app.get('/blog/new', function(req, res){
     res.render('new');
+});
+
+// when you hit submit on the form 
+// CREATE ROUTE (new post)
+app.post('/blog', function(req, res){
+    Blog.create(req.body.blog, function(err, newBlog){
+        if(err){
+            res.render('new');
+        } else {
+            res.redirect('/blog');
+        }
+    });
 });
 
 // Blog Route

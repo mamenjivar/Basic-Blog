@@ -2,21 +2,24 @@
 
 <div class='ui main container'>
     <div class='ui huge header'>NEW BLOG</div>
-    <form class='ui form'>
+    <form class='ui form' action='/blog' method='POST'>
         <div class="field">
-            <label>Blog Name: </label>
-            <input type="text" name="blog-name" placeholder="Blog Name">
+            <label>Blog Title: </label>
+            <input type="text" name="blog[title]" placeholder="Blog Name">
         </div>
         <div class="field">
-            <label>Author: </label>
-            <input type="text" name="author-name" placeholder="Author">
+            <label>Blog Author Name: </label>
+            <input type="text" name="blog[author]" placeholder="Author">
         </div>
         <div class="field">
             <label>Blog Content:</label>
-            <textarea></textarea>
+            <textarea name='blog[body]'></textarea>
         </div>
         <button class="ui primary button" type="submit">
-            Save
+            Submit
+        </button>
+        <button class="ui button red" type="reset">
+            Reset
         </button>
     </form>
 </div>
