@@ -28,6 +28,13 @@ var blogSchema = new mongoose.Schema({
 
 var Blog = mongoose.model('Blog', blogSchema);
 
+// manually push a new blog 
+// Blog.create({
+//     title: 'Test Blog',
+//     author: 'Miggsception',
+//     body: 'THIS IS THE FIRST TEST POST FOR LOCAL DB'
+// });
+
 // root route
 app.get('/', function(req, res){
     res.redirect('/index')
@@ -36,6 +43,10 @@ app.get('/', function(req, res){
 // INDEX(HOME) ROUTE
 app.get('/index', function(req, res){
     res.render('index');
+});
+
+app.get('/blog/new', function(req, res){
+    res.render('new');
 });
 
 // Blog Route

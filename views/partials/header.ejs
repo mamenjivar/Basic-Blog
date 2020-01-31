@@ -2,14 +2,17 @@
 <html>
     <header>
         <title>Basic Blog</title>
+            <!-- Semantic UI CSS -->
             <link rel='stylesheet' type='text/css' href='https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.css'>
+            <!-- CSS -->
+            <link rel='stylesheet' type='text/css' href='/stylesheets/app.css'>
     </header>
     <body>
-        <div class="ui fluid three item menu inverted grey huge">
-            <div class="item">
-                <i class="keyboard outline icon"></i>
+        <div class="ui fluid four item menu inverted grey huge fixed">
+            <div class='ui container'>
+                <a class='item noHover'><i class="keyboard outline icon"></i>BlogMe</a>
+                <a href='/' class="item">Home</a>
+                <a href='/blog' class="item">View Blogs</a>
+                <a href='/blog/new' class="item">Post Blog</a>
             </div>
-            <a class="item">Home</a>
-            <a class="item">View Blogs</a>
-            <a class="item">Post Blog</a>
         </div>
