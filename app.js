@@ -28,21 +28,23 @@ var blogSchema = new mongoose.Schema({
 
 var Blog = mongoose.model('Blog', blogSchema);
 
+// root route
 app.get('/', function(req, res){
-    res.redirect('/home')
+    res.redirect('/index')
 });
 
-app.get('/home', function(req, res){
-    res.render('home');
+// INDEX(HOME) ROUTE
+app.get('/index', function(req, res){
+    res.render('index');
 });
 
-// Index Route
+// Blog Route
 app.get('/blog', function(req, res){
     Blog.find({}, function(err, blog){
         if(err){
             console.log('ERROR!');
         } else {
-            res.render('index', {blog: blog});
+            res.render('blog', {blog: blog});
         }
     });
 });
