@@ -5,3 +5,7 @@
 .noHover{
     pointer-events: none;
 }
+
+#delete {
+    display: inline;
+}
