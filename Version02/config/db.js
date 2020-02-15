@@ -1,7 +1,7 @@
 // CONNECT TO DB
 const mongoose = require('mongoose');
 
-const connectDB = async () => {
+let connectDB = async () => {
     try {
         await mongoose.connect('mongodb://localhost/basic_blog', {
             useNewUrlParser: true,
@@ -11,7 +11,7 @@ const connectDB = async () => {
         console.log('local mongoDB connected');
     } catch(err) {
         console.log(err.message);
-        console.log('SOMETHING WENT WRONG dbjs')
+        console.log('SOMETHING WENT WRONG localDB')
 
         // EXIT PROCESS WITH FAILURE IF DOESN'T CONNECT
         process.exit(1);
