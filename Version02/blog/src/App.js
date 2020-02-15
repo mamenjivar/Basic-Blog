@@ -1,24 +1,15 @@
 import React from 'react';
-import logo from './logo.svg';
+import Header from './Blog/Header';
+import Personn from './Blog/blogForm';
 import './App.css';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      {/* The header for blog page */}
+      <Header />
+      {/* this is the form, there is a bug where I can't rename it for some reason */}
+      <Personn />
     </div>
   );
 }
