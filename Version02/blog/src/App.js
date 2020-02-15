@@ -1,6 +1,6 @@
 import React from 'react';
-import Header from './Blog/Header';
-import Personn from './Blog/blogForm';
+import Header from './Components/Header';
+import Form from './Components/blogForm';
 import './App.css';
 
 function App() {
@@ -8,8 +8,8 @@ function App() {
     <div>
       {/* The header for blog page */}
       <Header />
-      {/* this is the form, there is a bug where I can't rename it for some reason */}
-      <Personn />
+      {/* form block */}
+      <Form />
     </div>
   );
 }
