@@ -1,12 +1,11 @@
 import React, { Component } from 'react';
-import Header from '../Components/Header';
+import bootstrap from 'reactstrap';
 
 
 class ViewBlog extends Component {
     render() {
         return (
-            <div>
-                <Header />
+            <div class='container'>
                 <h1>View Blogs</h1>
             </div>
         );

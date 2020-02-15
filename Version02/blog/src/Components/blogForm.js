@@ -1,12 +1,12 @@
 import React from 'react';
-import { Button, Form, FormGroup, Label, Input, FormText } from 'reactstrap';
+import { Button, Form, FormGroup, Label, Input } from 'reactstrap';
 
 // es-6 format/syntax
 const blogForm = (props) => {
     return (
         <div class='container'>
             <h1>Post Blog</h1>
-            <Form>
+            <Form autoComplete='off'>
                 <FormGroup>
                     <Label for="exampleTitle">Blog Title: </Label>
                     <Input type="text" name="title" id="exampleTitle" placeholder="Title" />

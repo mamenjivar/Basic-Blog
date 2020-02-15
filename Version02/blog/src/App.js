@@ -1,16 +1,17 @@
 import React from 'react';
-import Header from './Components/Header';
-import Form from './Components/blogForm';
+import Blog from './pages/Blog';
+import { BrowserRouter } from 'react-router-dom';
 import './App.css';
 
 function App() {
   return (
-    <div>
-      {/* The header for blog page */}
-      <Header />
-      {/* form block */}
-      <Form />
-    </div>
+    <BrowserRouter>
+      <div>
+        {/* The header for blog page */}
+        <Blog />
+        {/* form block */}
+      </div>
+    </BrowserRouter>
   );
 }
 

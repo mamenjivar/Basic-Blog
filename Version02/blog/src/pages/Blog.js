@@ -1,4 +1,7 @@
 import React, { useState } from 'react';
+import { Route, Link } from 'react-router-dom';
+import Form from '../Components/blogForm';
+import viewBlog from './ViewBlog';
 import {
     Collapse,
     Navbar,
@@ -16,22 +19,24 @@ const Header = (props) => {
 
     return (
         <div class='pb-3'>
-            <Navbar color="light" light expand="md">
+            <Navbar color="dark" light expand="md">
                 <div class='container'>
                     <NavbarBrand>blogMe</NavbarBrand>
                     <NavbarToggler onClick={toggle} />
                     <Collapse isOpen={isOpen} navbar>
                         <Nav className="mr-auto" navbar>
                             <NavItem>
-                                <NavLink href="">View Blogs</NavLink>
+                                <NavLink><Link to='/viewBlog'>View Blog </Link></NavLink>
                             </NavItem>
                             <NavItem>
-                                <NavLink href="#">Post Blog</NavLink>
+                                <NavLink><Link to='/postBlog'>Post Blog</Link></NavLink>
                             </NavItem>
                         </Nav>
                     </Collapse>
                 </div>
             </Navbar>
+            <Route path='/viewBlog' exact component={ viewBlog }/>
+            <Route path='/postBlog' exact component={Form} />
         </div>
     );
 };
