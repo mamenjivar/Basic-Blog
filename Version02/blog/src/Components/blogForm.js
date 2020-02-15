@@ -21,19 +21,19 @@ class blogForm extends Component {
 
     onChangeBlogTitle(e) {
         this.setState({
-            blog_title: e.target_value
+            blog_title: e.target.value
         });
     }
 
     onChangeBlogAuthor(e) {
         this.setState({
-            blog_author: e.target_value
+            blog_author: e.target.value
         });
     }
 
     onChangeBlogBody(e) {
         this.setState({
-            blog_author: e.target_value
+            blog_body: e.target.value
         });
     }
 
@@ -51,7 +51,7 @@ class blogForm extends Component {
             blog_body: this.state.blog_body
         };
 
-        axios.post('http://localhost:3000/blog/new', newBlog)
+        axios.post('http://localhost:4000/blog/new', newBlog)
             .then(res => console.log(res.data));
 
         this.setState({

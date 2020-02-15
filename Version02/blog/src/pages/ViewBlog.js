@@ -19,7 +19,7 @@ class ViewBlog extends Component {
     }
 
     componentDidMount() {
-        axios.get('http://localhost:3000/blog')
+        axios.get('http://localhost:4000/blog')
             .then(response => {
                 this.setState({ blogs: response.data });
             })

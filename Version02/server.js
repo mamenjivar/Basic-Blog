@@ -30,19 +30,21 @@ app.get('/blog', (req, res) => {
     });
 });
 
-// push this to its own route as well
-// post blogs route
-app.get('/blog/new', (req, res) => {
-    Blog.create(req.body.blog, (err, newBlog) => {
-        if(err){
-            console.log('SUBMISSION SUCCESS!');
-        } else {
-            console.log('SOMETHING WENT WRONG!');
-        }
-    });
+// POST BLOGS ROUTE
+app.post('/blog/new', (req, res) => {
+    let blog = new Blog(req.body);
+
+    blog.save()
+        .then(blog => {
+            res.status(200).json({'blog': 'blog added successfully'});
+        })
+        .catch(err => {
+            res.status(400).send('adding new blog failed');
+        })
 });
 
-app.listen(process.env.PORT || 3000, () => {
+// ports
+app.listen(process.env.PORT || 4000, () => {
     console.log('Server is Running');
 });
 
