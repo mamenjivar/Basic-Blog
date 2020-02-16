@@ -1,6 +1,9 @@
 import React from 'react';
-import Blog from './pages/Blog';
-import { BrowserRouter } from 'react-router-dom';
+import Header from './Components/Header'
+import { BrowserRouter, Route } from 'react-router-dom';
+import { Redirect } from 'react-router';
+import Form from './Components/blogForm';
+import viewBlog from './pages/ViewBlog';
 import './App.css';
 
 function App() {
@@ -8,9 +11,14 @@ function App() {
     <BrowserRouter>
       <div>
         {/* The header for blog page */}
-        <Blog />
+        <Header />
         {/* form block */}
       </div>
+      <Route path='/viewBlog' exact component={viewBlog} />
+      <Route path='/postBlog' exact component={Form} />
+      <Route exact path='/'>
+        <Redirect to='/viewBlog' />
+      </Route>
     </BrowserRouter>
   );
 }
