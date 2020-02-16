@@ -1,12 +1,26 @@
 import React, { Component } from 'react';
 import axios from 'axios';
+import { ListGroup, ListGroupItem } from 'reactstrap';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faHeading, faUser, faFileAlt } from '@fortawesome/free-solid-svg-icons';
 
 const Blog = props => (
-    <ul>
-        <li>{props.blog.title}</li>
-        <li>{props.blog.author}</li>
-        <li>{props.blog.body}</li>
-    </ul>
+
+    <ListGroup className='my-5' flush>
+        <ListGroupItem>
+            <h2>
+                <FontAwesomeIcon icon={faHeading} />
+            </h2>{props.blog.title}
+        </ListGroupItem>
+        <ListGroupItem>
+            <h3>
+                <FontAwesomeIcon icon={faUser} />
+            </h3>{props.blog.author}</ListGroupItem>
+        <ListGroupItem>
+            <h4>
+                <FontAwesomeIcon icon={faFileAlt} />
+            </h4>{props.blog.body}</ListGroupItem>
+    </ListGroup>
 )
 
 class ViewBlog extends Component {
@@ -34,8 +48,8 @@ class ViewBlog extends Component {
 
     render() {
         return (
-            <div class='container'>
-                <h1>View Blogs</h1>
+            <div  className='container'>
+                <h1 className='text-center'>View Blogs</h1>
                 { this.blogList() }
             </div>
         );

@@ -5,7 +5,7 @@ import Form from '../Components/blogForm';
 import viewBlog from './ViewBlog';
 import Header from '../Components/Header';
 
-
+// The home page
 const Home = () => {
     return (
         <div>

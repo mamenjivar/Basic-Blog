@@ -1,5 +1,8 @@
 import React, { useState } from 'react';
 import { Link  } from 'react-router-dom';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faKeyboard } from '@fortawesome/free-solid-svg-icons';
+
 import {
     Collapse,
     Navbar,
@@ -24,7 +27,10 @@ const Header = (props) => {
         <div class='pb-3'>
             <Navbar color="dark" light expand="md">
                 <div class='container'>
-                    <NavbarBrand>blogMe</NavbarBrand>
+                    <NavbarBrand>
+                        <FontAwesomeIcon icon={faKeyboard} />
+                         blogMe
+                    </NavbarBrand>
                     <NavbarToggler onClick={toggle} />
                     <Collapse isOpen={isOpen} navbar>
                         <Nav className="mr-auto" navbar>
