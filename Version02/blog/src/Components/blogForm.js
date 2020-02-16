@@ -70,12 +70,13 @@ class blogForm extends Component {
     render() {
         return (
             <div class='container'>
-                <h1>Post Blog</h1>
+                <h1 className='text-center'>Post Blog</h1>
                 <form onSubmit={this.onSubmit}>
                     <div className='form-group'>
                         <label>Blog Title: </label>
                         <input type='text'
                                className='form-control'
+                               placeholder='Title'
                                value={this.state.blog_title}
                                onChange={this.onChangeBlogTitle}
                         />
@@ -84,14 +85,16 @@ class blogForm extends Component {
                         <label>Blog Author: </label>
                         <input type='text'
                                className='form-control'
+                               placeholder='Author'
                                value={this.state.blog_author}
                                onChange={this.onChangeBlogAuthor}
                         />
                     </div>
                     <div className='form-group'>
                         <label>Blog Content: </label>
-                        <input type='text'
+                        <textarea type='text'
                             className='form-control'
+                            placeholder='Content'
                             value={this.state.blog_body}
                             onChange={this.onChangeBlogBody}
                         />

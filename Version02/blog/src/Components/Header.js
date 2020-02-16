@@ -2,7 +2,6 @@ import React, { useState } from 'react';
 import { Link  } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faKeyboard } from '@fortawesome/free-solid-svg-icons';
-
 import {
     Collapse,
     Navbar,
@@ -20,14 +19,15 @@ const Header = (props) => {
 
     // to remove underline from navbar links
     const headerStyle = {
-        textDecoration: "none"
+        textDecoration: "none",
+        color: "white"
     }
 
     return (
         <div class='pb-3'>
             <Navbar color="dark" light expand="md">
                 <div class='container'>
-                    <NavbarBrand>
+                    <NavbarBrand style={headerStyle}>
                         <FontAwesomeIcon icon={faKeyboard} />
                          blogMe
                     </NavbarBrand>
