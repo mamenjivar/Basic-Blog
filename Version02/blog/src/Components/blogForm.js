@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import { Button, Form, FormGroup, Label, Input } from 'reactstrap';
 import axios from 'axios';
 
 class blogForm extends Component {
@@ -41,9 +40,9 @@ class blogForm extends Component {
         e.preventDefault();
 
         console.log('FORM SUBMITTED!');
-        console.log(`Title: ${this.state.title}`);
-        console.log(`Author: ${this.state.author}`);
-        console.log(`Blog: ${this.state.body}`);
+        console.log(`Title: ${this.state.blog_title}`);
+        console.log(`Author: ${this.state.blog_author}`);
+        console.log(`Blog: ${this.state.blog_body}`);
 
         const newBlog = {
             blog_title: this.state.blog_title,
@@ -51,8 +50,23 @@ class blogForm extends Component {
             blog_body: this.state.blog_body
         };
 
-        axios.post('http://localhost:4000/blog/new', newBlog)
-            .then(res => console.log(res.data));
+        // axios.post('http://localhost:4000/blog/new', newBlog)
+        // axios.post('/http://localhost:4000/blog/new', {
+        //     title: 'hello world',
+        //     author: 'read me ',
+        //     body: 'i dont know what to do'
+        // }).then(res => console.log(res.data));
+            // .then(res => console.log(res.data));
+
+        axios({
+            method: 'post',
+            url: 'http://localhost:4000/blog/new',
+            data: {
+                title: newBlog.blog_title,
+                author: newBlog.blog_author,
+                body: newBlog.blog_body
+            }
+        });
 
         this.setState({
             blog_title: '',
@@ -65,36 +79,35 @@ class blogForm extends Component {
         return (
             <div class='container'>
                 <h1>Post Blog</h1>
-                <Form autoComplete='off' onSubmit={this.onSubmit}>
-                    <FormGroup>
-                        <Label for="exampleTitle">Blog Title: </Label>
-                        <Input type="text" 
-                               name="title" 
-                               id="exampleTitle" 
-                               placeholder="Title" 
-                               value={this.state.blog_title} 
-                               onChange={this.onChangeBlogTitle}/>
-                    </FormGroup>
-                    <FormGroup>
-                        <Label for="exampleAuthor">Blog Author: </Label>
-                        <Input type="text" 
-                               name="author" 
-                               id="author" 
-                               placeholder="Author" 
-                               value={this.state.blog_author} 
-                               onChange={this.onChangeBlogAuthor}/>
-                    </FormGroup>
-                    <FormGroup>
-                        <Label for="exampleText">Blog Content: </Label>
-                        <Input type="textarea" 
-                               name="text" 
-                               id="exampleText" 
-                               placeholder='Content' 
-                               value={this.state.blog_body} 
-                               onChange={this.onChangeBlogBody}/>
-                    </FormGroup>
-                    <Button color='primary'>Submit</Button>
-                </Form>
+                <form onSubmit={this.onSubmit}>
+                    <div className='form-group'>
+                        <label>Blog Title: </label>
+                        <input type='text'
+                               className='form-control'
+                               value={this.state.blog_title}
+                               onChange={this.onChangeBlogTitle}
+                        />
+                    </div>
+                    <div className='form-group'>
+                        <label>Blog Author: </label>
+                        <input type='text'
+                               className='form-control'
+                               value={this.state.blog_author}
+                               onChange={this.onChangeBlogAuthor}
+                        />
+                    </div>
+                    <div className='form-group'>
+                        <label>Blog Content: </label>
+                        <input type='text'
+                            className='form-control'
+                            value={this.state.blog_body}
+                            onChange={this.onChangeBlogBody}
+                        />
+                    </div>
+                    <div className='form-group'>
+                        <input type='submit' value='Create Blog' className='btn btn-primary' />
+                    </div>
+                </form>
             </div>
         )
     };

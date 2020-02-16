@@ -40,13 +40,10 @@ app.post('/blog/new', (req, res) => {
         })
         .catch(err => {
             res.status(400).send('adding new blog failed');
-        })
+        });
 });
 
 // ports
 app.listen(process.env.PORT || 4000, () => {
     console.log('Server is Running');
 });
-
-// var port = normalizePort(process.env.PORT || '9000');
-// app.set('port', port);
