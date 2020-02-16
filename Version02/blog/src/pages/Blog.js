@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { Route } from 'react-router-dom';
 import { Redirect } from 'react-router';
 import Form from '../Components/blogForm';
@@ -6,7 +6,7 @@ import viewBlog from './ViewBlog';
 import Header from '../Components/Header';
 
 
-const Home = (props) => {
+const Home = () => {
     return (
         <div>
             <Header />

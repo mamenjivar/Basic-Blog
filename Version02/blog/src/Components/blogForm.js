@@ -50,14 +50,6 @@ class blogForm extends Component {
             blog_body: this.state.blog_body
         };
 
-        // axios.post('http://localhost:4000/blog/new', newBlog)
-        // axios.post('/http://localhost:4000/blog/new', {
-        //     title: 'hello world',
-        //     author: 'read me ',
-        //     body: 'i dont know what to do'
-        // }).then(res => console.log(res.data));
-            // .then(res => console.log(res.data));
-
         axios({
             method: 'post',
             url: 'http://localhost:4000/blog/new',
