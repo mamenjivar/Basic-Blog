@@ -12,13 +12,13 @@ function App() {
       <div>
         {/* The header for blog page */}
         <Header />
-        {/* form block */}
+
+        <Route path='/viewBlog' exact component={viewBlog} />
+        <Route path='/postBlog' exact component={Form} />
+        <Route exact path='/'>
+          <Redirect to='/viewBlog' />
+        </Route>
       </div>
-      <Route path='/viewBlog' exact component={viewBlog} />
-      <Route path='/postBlog' exact component={Form} />
-      <Route exact path='/'>
-        <Redirect to='/viewBlog' />
-      </Route>
     </BrowserRouter>
   );
 }
